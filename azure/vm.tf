@@ -63,3 +63,15 @@ resource "azurerm_virtual_machine" "thevm"{
     environment="Testing"
   }
 }
+resource "null_resource" "upload"{
+  provisioner "file"{
+    source="/home/azureops/terraform/azure/thegraph.svg"
+    destination="./thegraph.svg"
+    connection {
+      host="${azurerm_public_ip.myip.ip_address}"
+      type="ssh"
+      user="azureops"
+    }
+  }
+}
+
