@@ -5,7 +5,11 @@ provider "azurerm" {
   tenant_id = "${var.tenant}"
 }
 
-resource "azurerm_resource_group" "thegroup" {
-  name="${var.rg}"
-  location="${var.location}"
+resource "azurerm_resource_group" "thegroup"{
+ name="${var.rg}"
+ location="${var.location}"
+}
+
+output "bubba"{
+  value="${azurerm_resource_group.thegroup.name}"
 }
