@@ -12,8 +12,8 @@ module "mycompute" {
   vnet_subnet_id = "${module.network.vnet_subnets[0]}"
   tags = {
     environment = "testing"
+  }
 }
-
 
 module "network" {
   source="Azure/network/azurerm"
